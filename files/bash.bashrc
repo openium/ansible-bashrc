@@ -24,9 +24,9 @@ esac
 
 if [ "$color_prompt" = yes ]; then
     if [[ ${EUID} == 0 ]] ; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[31m\]\h\[\033[34m\] \W \$\[\033[00m\] '
+        PS1='\e[94m\t \[\e[00;31m\]\u\[\e[00;36m\]@\[\e[00;35m\]\h:\[\e[00;34m\]\w\[\e[00;00m\] \n\[\e[00;31m\]#\[\e[00;00m\] '
     else
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h\[\033[34m\] \w \$\[\033[00m\] '
+        PS1='\e[94m\t \[\e[00;32m\]\u\[\e[00;36m\]@\[\e[00;35m\]\h:\[\e[00;34m\]\w\[\e[00;00m\] \n$ '
     fi
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
